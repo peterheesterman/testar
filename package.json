@@ -1,0 +1,38 @@
+{
+  "name": "testar",
+  "version": "0.0.1",
+  "description": "Enumeration testing tool",
+  "main": "sdf/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterheesterman/testar.git"
+  },
+  "keywords": [
+    "Testing",
+    "Tests",
+    "Test",
+    "Enumeration",
+    "Tools",
+    "Commandline"
+  ],
+  "author": "Peter Heesterman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peterheesterman/testar/issues"
+  },
+  "homepage": "https://github.com/peterheesterman/testar#readme",
+  "bin": {
+    "testar": "./src/index.js"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.15.1",
+    "inquirer": "^5.2.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}
