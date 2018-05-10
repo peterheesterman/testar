@@ -11,14 +11,14 @@ const errHandler = (err) => {
 
 module.exports = (specFilePath, testContent) => {
   if (fs.existsSync(specFilePath)) {
-    fs.appendFile(specFilePath, `\n\n${testContent}`, errHandler)
+    fs.appendFile(specFilePath, `${testContent}`, errHandler)
   } else {
     inquirer
       .prompt(shouldMakeNewFileAt(specFilePath))
       .then(answers => {
         const { shouldMakeNewFile } = answers
         if (shouldMakeNewFile) {
-          fs.writeFile(specFilePath, `\n\n${testContent}`, errHandler)
+          fs.writeFile(specFilePath, `${testContent}`, errHandler)
         }
       })
   }

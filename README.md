@@ -37,4 +37,8 @@ have good sensible converage.
 
 ### Phase 2:
  - Add anaylitics of functions already in file
+ - Make it use async await everywhere
+ - Transpile it so that it can be used anywhere
+
+
 

@@ -3,24 +3,31 @@
 const version = require('../package.json').version
 const program = require('commander')
 
-const enumerateFile = require('./commands/enumin')
-const enumerateFunction = require('./commands/enum')
+const pickFileToEnumerateAFunctionIn = require('./commands/pick')
+const enumerate = require('./commands/enum')
+const spec = require('./commands/spec')
 
 //const whatFramework = require('./questions/framework')
 
 program
   .version(version, '-v, --version')
   
-// testar enum [file to look at methods in] - coming soon.
+// testar pick [file to look at methods in] - coming soon.
+  //  should make a nice little picker appear for which function to test.
 program
-  .command('enumin <file>')
+  .command('pick <file>')
   .description('Enumerate a function in the file')
-  .action(enumerateFile)
+  .action(pickFileToEnumerateAFunctionIn)
   
+program
+  .command('spec <sourceFile>')
+  .description('Create a spec file for a src file')
+  .action(spec)
+
 // testar enum output.txt 'some function handle'
 program
-  .command('enum <spec_file> [functionHandles...]')
+  .command('enum <sourceFile> [functionHandles...]')
   .description('Enumerate a function Handle and put the result in a file')
-  .action(enumerateFunction)
+  .action(enumerate)
 
 program.parse(process.argv)

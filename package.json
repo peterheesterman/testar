@@ -1,8 +1,8 @@
 {
   "name": "testar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Enumeration testing tool",
-  "main": "sdf/index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest"
   },
@@ -28,6 +28,7 @@
     "testar": "./src/index.js"
   },
   "dependencies": {
+    "babel-core": "^6.26.3",
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
     "inquirer": "^5.2.0"
