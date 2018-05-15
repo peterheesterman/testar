@@ -1,41 +1,28 @@
 
-
-const producePossibleInputs = require('../../enumerator')
+const path = require('path')
+const chalk = require('chalk')
 const writer = require('../../writer')
-
+const testFileContentWriter = require('./testFileContentWriter')
 
 const getSpecFilePath = require('../../utils/getSpecFilePath')
 
 module.exports = (sourceFile) => {
+  const framework = process.env.testframework
 
-// Make this configurable some time
+  const newTestCode = testFileContentWriter({
+    framework,
+    filePath: sourceFile
+  })
 
-// Ava
-  let newTestCode = `
-/* @flow */
+  const specFilePath = getSpecFilePath(sourceFile);
+  const fileName = path.basename(specFilePath)
+  const folderName = path.basename(path.dirname(specFilePath))
 
-const test = require('ava')
-
-test('[describe a behaviour]', (t) => {
-
-  t.fail()
-})
-
-`
-
-
-// // Jest
-//   let newTestCode = `
-// /* @flow */
-
-// const something = require('something')
-
-// test('[describe a behaviour]', () => {
-
-//   expect(something()).toBe(undefined)
-// })
-
-// `
-
-  writer(getSpecFilePath(sourceFile), newTestCode)
+  writer({
+    specFilePath, 
+    testContent: newTestCode,
+    prePrompMessage: `\n`,
+    postFileCreateMessage: chalk.green(`\n\t✨ Yay another test file! (${folderName}\\${fileName})\n`),
+    preFileCreateMessage: null,
+  })
 }

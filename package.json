@@ -1,6 +1,6 @@
 {
   "name": "testar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Enumeration testing tool",
   "main": "src/index.js",
   "scripts": {
