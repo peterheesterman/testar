@@ -1,16 +1,9 @@
 
 # Todos: 
 
-## This iteration
-
- - [done] make the test file have an import of the folder name that you are testing index from or the name of the file as an import
- - ---> Chalk it all up so that it looks nice 
- - Make the testing framework optionally setable (with a env variable)
- - Document the different uses
-
-
 ## Phase 1:
  - Add a `testar learn` function that tells you tips and tricks about testing
+ - Chalk it all up so that it looks nice (# 2) 
  - Dogfood the functions on all the file to put some tests in.
  - Make it write meaningful tests
  - Make it detect the types in the function handle
