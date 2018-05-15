@@ -12,6 +12,11 @@ const spec = require('./commands/spec')
 program
   .version(version, '-v, --version')
   
+program
+  .command('spec <sourceFile>')
+  .description('Create a spec file for a src file')
+  .action(spec)
+
 // testar pick [file to look at methods in] - coming soon.
   //  should make a nice little picker appear for which function to test.
 program
@@ -19,10 +24,6 @@ program
   .description('Enumerate a function in the file')
   .action(pickFileToEnumerateAFunctionIn)
   
-program
-  .command('spec <sourceFile>')
-  .description('Create a spec file for a src file')
-  .action(spec)
 
 // testar enum output.txt 'some function handle'
 program
