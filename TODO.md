@@ -1,6 +1,12 @@
 
 # Todos: 
 
+## Suggestions from own use -
+
+ 1) make a .testrc for storing configuration that is overridden by env variables
+ 2) add config so that it can work for es5 modules and commonjs modules etc.
+ 3) `testar spec` should look in current folder and if there is only 1 file that is not a test file, if so it should create a spec file for it. 
+
 ## Phase 1:
  - Add a `testar learn` function that tells you tips and tricks about testing
  - Chalk it all up so that it looks nice (# 2) 
