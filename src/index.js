@@ -3,11 +3,8 @@
 const version = require('../package.json').version
 const program = require('commander')
 
-const pickFileToEnumerateAFunctionIn = require('./commands/pick')
-const enumerate = require('./commands/enum')
 const spec = require('./commands/spec')
-
-//const whatFramework = require('./questions/framework')
+const pickFileToEnumerateAFunctionIn = require('./commands/pick')
 
 program
   .version(version, '-v, --version')
