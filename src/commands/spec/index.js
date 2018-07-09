@@ -6,7 +6,7 @@ const testFileContentWriter = require('./testFileContentWriter')
 
 const getSpecFilePath = require('../../utils/getSpecFilePath')
 
-module.exports = (sourceFile) => {
+module.exports = (sourceFile = './index.js') => {
   const framework = process.env.testframework
 
   const newTestCode = testFileContentWriter({
