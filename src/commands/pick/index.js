@@ -9,23 +9,8 @@ const inquirer = require('inquirer')
 const writer = require('../../writer')
 const getFunctionDataFromAST = require('./functionFetcher')
 const makeFunctionListFromNodes = require('./makeFunctionListFromNodes')
-//const producePossibleInputs = require('../../enumerator')
 
 const getSpecFilePath = require('../../utils/getSpecFilePath')
-
-// Used for me to test a prototype version of this ------
-
-function winners(fasdf) { //eslint-disable-line no-unused-vars
-  return fasdf;
-}
-
-const interesting = (a, b, c, d) => { //eslint-disable-line no-unused-vars
-  return a + b + c + d
-}
-
-// ------------------------------------------------------
-
-
 
 module.exports = (file) => {
   const filePath = path.join(process.cwd(), file)
@@ -52,7 +37,6 @@ module.exports = (file) => {
         console.log(chalk.blue(`\n\t8 tests created for ${functionName} (...${specFilePath.substr(specFilePath.length - 25)})\n`))
 
         const testTemplatesToAdd = "[Test Templates]"
-        //const testTemplatesToAdd = producePossibleInputs([functionHandle])
         writer(specFilePath, testTemplatesToAdd)
       })
     })
