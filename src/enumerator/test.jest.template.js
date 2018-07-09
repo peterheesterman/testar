@@ -1,8 +1,9 @@
 module.exports = ({
   testName,
   functionName,
+  inputString
 }) => `
 test('${testName}', () => {
-  expext(${functionName}()).toBe(undefined)
+  expext(${functionName}(${inputString})).toBe(undefined)
 }
 `

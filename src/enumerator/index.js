@@ -1,12 +1,22 @@
 
 const testTemplate = require('./test.jest.template')
 
-module.exports = (functionHandle) => {
-  if (!functionHandle) throw new Error('the functionHandle is undefined or null')
-  const functionName = 'fakeName';
+const inputDefinitions = require('./inputDefinitions')
 
+const testMaker = (functionName) => (typeDefinition) => {
   return testTemplate({
-    testName: `${functionName} should XXX`,
-    functionName
+    testName: `${functionName} should XXX with input (${typeDefinition.name})`,
+    functionName,
+    inputString: typeDefinition.literal
   })
+}
+
+module.exports = (
+  functionName
+) => {
+  if (!functionName) throw new Error('the functionName is undefined or null')
+
+  const tests = inputDefinitions.map(testMaker(functionName))
+
+  return tests.join('')
 }
